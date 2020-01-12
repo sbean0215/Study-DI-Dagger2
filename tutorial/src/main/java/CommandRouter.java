@@ -1,7 +1,13 @@
+import javax.inject.Inject;
 import java.util.*;
 
 final class CommandRouter {
     private final Map<String, Command> commands = Collections.emptyMap();
+
+    @Inject
+    public CommandRouter() {
+
+    }
 
     Command.Status route(String input) {
         List<String> splitInput = split(input);
